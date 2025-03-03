@@ -19,7 +19,9 @@ Every day, I will:
 🗓️ Phase 1: Foundations (Day 1-30) – Git, Linux & Scripting
 
 ✅ Day 1-7: Git & GitHub – Repositories, branching, merging, PRs, GitHub Actions
+
 ✅ Day 8-14: Linux – CLI, file system, permissions, networking, process management, security
+
 ✅ Day 15-20: Shell Scripting – Bash scripting, automation, cron jobs
 ✅ Day 21-25: Networking & Security – TCP/IP, firewalls, SSH, DNS, load balancers
 ✅ Day 26-30: Docker Basics – Containers, images, Dockerfile, volumes, networking
