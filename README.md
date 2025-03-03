@@ -23,24 +23,39 @@ Every day, I will:
 ✅ Day 8-14: Linux – CLI, file system, permissions, networking, process management, security
 
 ✅ Day 15-20: Shell Scripting – Bash scripting, automation, cron jobs
+
 ✅ Day 21-25: Networking & Security – TCP/IP, firewalls, SSH, DNS, load balancers
+
 ✅ Day 26-30: Docker Basics – Containers, images, Dockerfile, volumes, networking
 
 🗓️ Phase 2: DevOps Tools & CI/CD (Day 31-60)
+
 ✅ Day 31-35: Docker Advanced – Compose, multi-container apps, registries
+
 ✅ Day 36-40: Kubernetes Basics – Pods, deployments, services, ingress
+
 ✅ Day 41-45: Kubernetes Advanced – Helm, operators, RBAC, networking
+
 ✅ Day 46-50: CI/CD Basics – Jenkins, GitHub Actions, GitLab CI
+
 ✅ Day 51-55: Infrastructure as Code (IaC) – Terraform, Ansible, CloudFormation
+
 ✅ Day 56-60: Monitoring & Logging – Prometheus, Grafana, ELK Stack
 
 🗓️ Phase 3: Cloud & Real-World Projects (Day 61-90)
+
 ✅ Day 61-65: Cloud Computing Basics – AWS, Azure, GCP (EC2, S3, IAM, VPC)
+
 ✅ Day 66-70: Deploying Kubernetes on Cloud – EKS, GKE, AKS
+
 ✅ Day 71-75: Serverless & Microservices – Lambda, API Gateway, Event-driven architecture
+
 ✅ Day 76-80: Security & Compliance – Secrets management, policies, best practices
+
 ✅ Day 81-85: Real-World Project Deployment – Full CI/CD pipeline on cloud
+
 ✅ Day 86-90: Mock Interviews & Job Readiness – Resume, LinkedIn, GitHub portfolio
+
 
 ---
 
