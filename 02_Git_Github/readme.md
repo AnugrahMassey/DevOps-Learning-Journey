@@ -94,3 +94,70 @@ git branch -d feature-1
 
 ---
 
+## **📅 Day 4: GitHub Collaboration (Forks, Clones & PRs)**
+
+### **🔹 Forking & Cloning**
+- **Fork**: Create a copy of a repository in your GitHub account.
+- **Clone**: Download a GitHub repository locally.
+
+```bash
+git clone <repo_url>
+```
+
+### **🔹 Pull Requests (PRs)**
+A Pull Request is a way to contribute changes to a project.
+
+#### **Steps to Create a PR:**
+1. Fork the repository
+2. Clone it locally
+3. Create a new branch and make changes
+4. Push the changes to GitHub
+5. Open a Pull Request on GitHub
+
+---
+
+## **📅 Day 5: Git Reset, Revert & Rebase**
+
+### **🔹 Undoing Changes in Git**
+| Command | Action |
+|---------|--------|
+| `git reset --soft HEAD~1` | Undo last commit (keep changes staged) |
+| `git reset --mixed HEAD~1` | Undo last commit (keep changes unstaged) |
+| `git reset --hard HEAD~1` | Undo last commit (delete changes) |
+| `git revert <commit-id>` | Create a new commit that undoes a previous commit |
+| `git rebase <branch-name>` | Move commits from one branch onto another |
+
+---
+
+## **📅 Day 6: Git Stash, Tags & Hooks**
+
+### **🔹 Git Stash**
+Stashing temporarily saves uncommitted changes without committing them.
+
+```bash
+git stash
+git stash pop   # Apply stashed changes
+git stash list  # View stashed changes
+```
+
+### **🔹 Git Tags**
+Tags mark specific commits (e.g., software releases).
+
+```bash
+git tag -a v1.0 -m "Version 1.0"
+git push origin v1.0
+```
+
+### **🔹 Git Hooks**
+Hooks automate tasks like running tests before committing.
+
+```bash
+cp pre-commit .git/hooks/
+chmod +x .git/hooks/pre-commit
+```
+
+---
+
+## **📅 Day 7: GitHub Actions (CI/CD Basics)**
+
+
