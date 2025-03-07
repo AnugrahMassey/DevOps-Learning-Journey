@@ -160,4 +160,49 @@ chmod +x .git/hooks/pre-commit
 
 ## **📅 Day 7: GitHub Actions (CI/CD Basics)**
 
+### **🔹 What is GitHub Actions?**
+GitHub Actions allows you to automate workflows (e.g., CI/CD pipelines).
+
+### **🔹 Create a CI/CD Workflow**
+1. Go to your GitHub repo → **Actions** tab
+2. Click **New Workflow**
+3. Add a `.github/workflows/main.yml` file in your repo:
+
+```yaml
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+```
+
+4. Commit & push this file → GitHub will trigger a pipeline on every push!
+
+---
+
+# **📌 Week 1 Summary**
+✔ Git installation & configuration
+✔ Git workflow & basic commands
+✔ Branching, merging & pull requests
+✔ Undoing changes with reset, revert & rebase
+✔ Stashing, tagging & hooks
+✔ Introduction to GitHub Actions for CI/CD
+
+---
 
