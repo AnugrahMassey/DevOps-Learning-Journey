@@ -41,4 +41,17 @@ Linux is an open-source operating system used for servers, cloud computing, and 
 
 ---
 
-## **🔹 Day 10: Linux Networking Basics**
+## **🔹 Day 10: Linux Networking Basics**  
+### **📌 Check Network Configuration**  
+- `ip a` → Show IP addresses  
+- `ifconfig` → Show network interfaces  
+- `netstat -tulnp` → Show open ports  
+- `ping google.com` → Test connectivity  
+
+### **📌 Firewall Management**  
+- `ufw allow 22/tcp` → Allow SSH  
+- `ufw enable` → Enable firewall  
+
+---
+
+## **🔹 Day 11: Process Management & Monitoring** 
