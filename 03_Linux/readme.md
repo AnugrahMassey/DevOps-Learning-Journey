@@ -54,4 +54,20 @@ Linux is an open-source operating system used for servers, cloud computing, and 
 
 ---
 
-## **🔹 Day 11: Process Management & Monitoring** 
+## **🔹 Day 11: Process Management & Monitoring**  
+### **📌 Process Monitoring**  
+- `ps aux` → List running processes  
+- `top` → Live process monitoring  
+- `htop` → Interactive process viewer  
+
+### **📌 Managing Processes**  
+- `kill -9 PID` → Force kill a process  
+- `pkill process_name` → Kill by name  
+
+### **📌 Running Processes in Background**  
+- `command &` → Run in the background  
+- `nohup command &` → Run even after logout  
+
+---
+
+## **🔹 Day 12: User Management & Security**  
