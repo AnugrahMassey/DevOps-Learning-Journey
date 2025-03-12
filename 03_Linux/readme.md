@@ -71,3 +71,15 @@ Linux is an open-source operating system used for servers, cloud computing, and 
 ---
 
 ## **🔹 Day 12: User Management & Security**  
+### **📌 User & Group Management**  
+- `adduser newuser` → Add a user  
+- `usermod -aG sudo newuser` → Add user to sudo group  
+- `passwd newuser` → Change password  
+
+### **📌 SSH Key Authentication**  
+- `ssh-keygen -t rsa -b 4096` → Generate SSH key  
+- `ssh-copy-id user@server` → Copy key to a remote server  
+
+---
+
+## **🔹 Day 13: Linux Package Management & Logs**  
