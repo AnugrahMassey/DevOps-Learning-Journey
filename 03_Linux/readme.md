@@ -83,3 +83,14 @@ Linux is an open-source operating system used for servers, cloud computing, and 
 ---
 
 ## **🔹 Day 13: Linux Package Management & Logs**  
+### **📌 Installing & Managing Packages**  
+- `apt install package` (Debian-based)  
+- `yum install package` (RHEL-based)  
+
+### **📌 Checking Logs**  
+- `journalctl -u nginx` → View service logs  
+- `dmesg | tail` → View recent kernel logs  
+
+---
+
+## **🔹 Day 14: Linux Hardening & Security Best 
