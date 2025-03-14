@@ -93,4 +93,21 @@ Linux is an open-source operating system used for servers, cloud computing, and 
 
 ---
 
-## **🔹 Day 14: Linux Hardening & Security Best 
+## **🔹 Day 14: Linux Hardening & Security Best Practices**  
+### **📌 Security Best Practices**  
+- Regularly update Linux (`apt update && apt upgrade`)  
+- Configure a firewall (`ufw enable`)  
+- Disable root login in SSH (`/etc/ssh/sshd_config`)  
+- Use Fail2Ban to prevent brute-force attacks  
+
+---
+
+## **🎯 Week 2 Summary:**  
+✅ Linux **CLI commands**  
+✅ File system & **permissions**  
+✅ **Networking, SSH, and security**  
+✅ Process **monitoring & management**  
+✅ User **management & security best practices**  
+
+**Next: Week 3 – Shell Scripting & Automation 🚀**  
+Would you like a **hands-on task** to practice these Linux skills?
