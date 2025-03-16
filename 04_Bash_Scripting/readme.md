@@ -43,3 +43,42 @@ This week, we focused on **Bash scripting**, an essential skill for automating t
 ---
 
 ## **🔹 Day 16: Variables & User Input**
+
+### **What Are Variables?**
+A **variable** stores data that can be used later in the script.
+
+#### **Declaring and Using Variables**
+```bash
+#!/bin/bash
+name="DevOps Engineer"
+echo "Welcome, $name!"
+```
+💡 **Explanation:**
+- `name="DevOps Engineer"` → Assigns a value to `name`.
+- `$name` → Retrieves and prints the variable value.
+
+### **Taking User Input**
+```bash
+#!/bin/bash
+read -p "Enter your name: " username
+echo "Hello, $username!"
+```
+💡 **Explanation:**
+- `read -p "Message" variable` → Prompts user for input.
+- `$username` → Stores and prints user input.
+
+### **Environment Variables**
+```bash
+echo "Home Directory: $HOME"
+echo "Current Directory: $PWD"
+echo "Shell Used: $SHELL"
+```
+💡 **Common Environment Variables:**
+- `$HOME` → User’s home directory.
+- `$PWD` → Current working directory.
+- `$SHELL` → Shell type in use.
+
+---
+
+## **🔹 Day 17: Conditional Statements & Loops**
+
