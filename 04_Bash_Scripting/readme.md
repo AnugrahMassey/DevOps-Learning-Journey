@@ -81,4 +81,50 @@ echo "Shell Used: $SHELL"
 ---
 
 ## **🔹 Day 17: Conditional Statements & Loops**
+### **If-Else Conditions**
+```bash
+#!/bin/bash
+read -p "Enter a number: " num
+
+if [ $num -gt 10 ]; then
+   echo "Number is greater than 10"
+else
+   echo "Number is 10 or less"
+fi
+```
+💡 **Explanation:**
+- `if [ condition ]; then` → Checks a condition.
+- `-gt` (greater than), `-lt` (less than), `-eq` (equal to).
+
+### **Loops in Bash**
+#### **For Loop**
+```bash
+for i in {1..5}; do
+   echo "Iteration $i"
+done
+```
+#### **While Loop**
+```bash
+count=1
+while [ $count -le 5 ]; do
+   echo "Count: $count"
+   ((count++))
+done
+```
+#### **Until Loop**
+```bash
+num=1
+until [ $num -ge 5 ]; do
+   echo "Number: $num"
+   ((num++))
+done
+```
+💡 **Explanation:**
+- `for` loop → Runs a set number of times.
+- `while` loop → Runs as long as condition is **true**.
+- `until` loop → Runs **until** condition becomes **true**.
+
+---
+
+## **🔹 Day 18: Functions & Error Handling**
 
