@@ -81,6 +81,7 @@ echo "Shell Used: $SHELL"
 ---
 
 ## **🔹 Day 17: Conditional Statements & Loops**
+
 ### **If-Else Conditions**
 ```bash
 #!/bin/bash
@@ -127,4 +128,32 @@ done
 ---
 
 ## **🔹 Day 18: Functions & Error Handling**
+
+### **Creating a Function**
+```bash
+#!/bin/bash
+greet() {
+   echo "Hello, $1!"
+}
+
+greet "DevOps Engineer"
+```
+💡 **Explanation:**
+- `greet()` → Defines a function.
+- `$1` → First argument passed to the function.
+
+### **Error Handling with `trap`**
+```bash
+#!/bin/bash
+trap 'echo "Error on line $LINENO"; exit 1' ERR
+
+ls /non_existent_directory
+```
+💡 **Explanation:**
+- `trap` → Detects errors and runs a command.
+- `$LINENO` → Shows line number of error.
+
+---
+
+## **🔹 Day 19: File & Process Management**
 
