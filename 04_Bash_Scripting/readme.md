@@ -157,3 +157,38 @@ ls /non_existent_directory
 
 ## **🔹 Day 19: File & Process Management**
 
+### **Checking If a File Exists**
+```bash
+#!/bin/bash
+file="/var/log/syslog"
+
+if [ -f "$file" ]; then
+   echo "$file exists"
+else
+   echo "$file does not exist"
+fi
+```
+
+### **Automating Log Cleanup (`cleanup_logs.sh`)**
+```bash
+#!/bin/bash
+find /var/log -name "*.log" -type f -mtime +7 -exec rm -f {} \;
+echo "Old log files deleted"
+```
+💡 **Explanation:**
+- `find` → Searches files.
+- `-mtime +7` → Deletes files older than 7 days.
+
+### **Managing Processes (`process_manager.sh`)**
+```bash
+#!/bin/bash
+ps aux | grep apache2
+```
+💡 **Explanation:**
+- `ps aux` → Lists running processes.
+- `grep apache2` → Filters processes by name.
+
+---
+
+## **🔹 Day 20: Automating with Cron Jobs & Logging**
+
