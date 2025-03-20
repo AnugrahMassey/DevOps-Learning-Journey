@@ -192,3 +192,53 @@ ps aux | grep apache2
 
 ## **🔹 Day 20: Automating with Cron Jobs & Logging**
 
+### **Setting Up a Cron Job (`cron_scheduler.sh`)**
+1️⃣ Open crontab:
+   ```bash
+   crontab -e
+   ```
+2️⃣ Add a cron job to clean logs every midnight:
+   ```bash
+   0 0 * * * /path/to/cleanup_logs.sh
+   ```
+
+### **Logging Script Execution (`logging.sh`)**
+```bash
+#!/bin/bash
+LOGFILE="script.log"
+
+log() {
+   echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOGFILE"
+}
+
+log "Script started"
+sleep 2
+log "Task completed"
+```
+💡 **Explanation:**
+- `log()` → Function to log messages.
+- `date` → Captures current timestamp.
+- `tee -a` → Appends output to the log file.
+
+---
+
+# **📌 Week 3 Summary**
+By the end of **Week 3**, you learned:
+✅ How to **write and execute Bash scripts**.  
+✅ How to **use variables and user input**.  
+✅ How to **write if-else conditions and loops**.  
+✅ How to **create functions and handle errors**.  
+✅ How to **manage files, processes, and logs**.  
+✅ How to **schedule automated jobs with Cron**.  
+
+---
+
+# **🚀 Next Up: Week 4 - Networking & Security**
+In **Week 4**, you will learn:
+✅ **TCP/IP Networking Basics**  
+✅ **Firewalls & Load Balancers**  
+✅ **SSH, DNS, and Network Security**  
+
+This will help you understand how networking works in DevOps environments! 🚀
+
+---
