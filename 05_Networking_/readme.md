@@ -32,3 +32,31 @@ Welcome to **Week 4** of your DevOps learning journey! This week, we will cover 
 
 ## ✅ **Day 22: TCP/IP Model and OSI Model**
 
+### 📌 **TCP/IP Model Overview:**
+- **Transmission Control Protocol/Internet Protocol (TCP/IP)** is the communication standard of the internet.
+- It has 4 layers:
+  1. **Application Layer** - HTTP, FTP, DNS
+  2. **Transport Layer** - TCP, UDP
+  3. **Internet Layer** - IP, ICMP
+  4. **Network Access Layer** - Ethernet, Wi-Fi
+
+### 📌 **OSI Model Overview:**
+- **Open Systems Interconnection (OSI)** model has 7 layers:
+  1. **Physical Layer** - Hardware like cables, switches.
+  2. **Data Link Layer** - MAC addresses and Ethernet frames.
+  3. **Network Layer** - IP addressing and routing.
+  4. **Transport Layer** - Reliable data transmission.
+  5. **Session Layer** - Manages sessions between applications.
+  6. **Presentation Layer** - Data formatting and encryption.
+  7. **Application Layer** - User interaction (HTTP, SMTP).
+
+### 🧑‍💻 **Practical Commands:**
+- `telnet <IP> <Port>` - Check connectivity at the transport layer.
+- `tcpdump` - Capture network packets.
+- `curl -I <URL>` - View HTTP headers.
+- `wget <URL>` - Download files from servers.
+
+---
+
+## ✅ **Day 23: Firewalls and Network Security**
+
