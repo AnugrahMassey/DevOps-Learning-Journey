@@ -60,3 +60,30 @@ Welcome to **Week 4** of your DevOps learning journey! This week, we will cover 
 
 ## ✅ **Day 23: Firewalls and Network Security**
 
+### 📌 **What is a Firewall?**
+- A **Firewall** is a security device that monitors and controls network traffic.
+- It applies rules to allow or block specific traffic.
+
+### 📚 **Types of Firewalls:**
+1. **Network Firewalls** - Protect entire networks.
+2. **Host Firewalls** - Protect individual devices.
+3. **Cloud Firewalls** - Managed by cloud providers like AWS, Azure, and GCP.
+
+### 🧑‍💻 **Firewall Management Commands:**
+- Using **UFW (Uncomplicated Firewall)**:
+  ```bash
+  sudo ufw enable
+  sudo ufw allow 80/tcp
+  sudo ufw status
+  ```
+- Using **iptables**:
+  ```bash
+  sudo iptables -L
+  sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+  ```
+
+---
+
+## ✅ **Day 24: SSH (Secure Shell)**
+
+
