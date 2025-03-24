@@ -86,4 +86,35 @@ Welcome to **Week 4** of your DevOps learning journey! This week, we will cover 
 
 ## ✅ **Day 24: SSH (Secure Shell)**
 
+### 📌 **What is SSH?**
+- **SSH (Secure Shell)** is a secure network protocol for remote server management.
+- It uses port **22** by default.
+
+### 📚 **Key Concepts:**
+- **Public and Private Keys** - Used for authentication.
+- **Password Authentication** - Less secure.
+- **SSH Agent** - Manages private keys.
+
+### 🧑‍💻 **Common SSH Commands:**
+- Connect to a remote server:
+  ```bash
+  ssh user@server_ip
+  ```
+- Generate SSH key pair:
+  ```bash
+  ssh-keygen -t rsa
+  ```
+- Copy key to server:
+  ```bash
+  ssh-copy-id user@server_ip
+  ```
+- Transfer files securely using SCP:
+  ```bash
+  scp file.txt user@server_ip:/path/to/destination
+  ```
+
+---
+
+## ✅ **Day 25: DNS and Load Balancers**
+
 
