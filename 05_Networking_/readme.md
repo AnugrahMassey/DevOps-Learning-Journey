@@ -117,4 +117,50 @@ Welcome to **Week 4** of your DevOps learning journey! This week, we will cover 
 
 ## ✅ **Day 25: DNS and Load Balancers**
 
+### 📌 **What is DNS?**
+- **Domain Name System (DNS)** translates domain names into IP addresses.
+- **Example:** `www.google.com` → `142.250.72.46`
+
+### 📚 **DNS Components:**
+1. **Resolver:** Client-side query tool.
+2. **Root Servers:** Direct requests to appropriate TLD servers.
+3. **TLD Servers:** Handle domains like `.com`, `.org`.
+4. **Authoritative DNS Servers:** Store actual IP address mappings.
+
+### 🧑‍💻 **DNS Commands:**
+- Get IP address of a domain:
+  ```bash
+  nslookup example.com
+  dig example.com
+  ```
+- Test DNS resolution:
+  ```bash
+  host example.com
+  ```
+
+### 📌 **What is a Load Balancer?**
+- A **Load Balancer** distributes incoming traffic across multiple servers to ensure reliability and performance.
+
+### 📚 **Types of Load Balancers:**
+1. **Layer 4 Load Balancer:** Operates at the Transport Layer using TCP or UDP.
+2. **Layer 7 Load Balancer:** Operates at the Application Layer using HTTP or HTTPS.
+
+### 🧑‍💻 **Common Load Balancer Tools:**
+- **Nginx** - Acts as a reverse proxy and load balancer.
+- **HAProxy** - Provides TCP and HTTP load balancing.
+
+---
+
+## 📊 **Weekly Summary**
+- **Day 21:** Learned the basics of networking, types of networks, and essential commands.
+- **Day 22:** Covered the TCP/IP and OSI models, explored how data flows through networks.
+- **Day 23:** Gained insights into firewall management using UFW and iptables for network security.
+- **Day 24:** Explored SSH for secure remote access, generated keys, and transferred files.
+- **Day 25:** Understood DNS and Load Balancers, learning how domain names are resolved and how traffic is distributed.
+
+You are now well-versed with the fundamentals of networking and security — a crucial part of DevOps! 🎉
+
+Next week, you'll dive into **Docker Basics** to explore containerization and container management. 🚀
+
+---
 
