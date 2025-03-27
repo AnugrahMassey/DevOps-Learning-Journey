@@ -32,3 +32,40 @@ Welcome to **Week 5** of your DevOps journey! This week focuses on Docker, a cri
 
 ## ✅ **Day 27: Working with Docker Images and Containers**
 
+### Pulling Docker Images
+- Docker Hub contains thousands of prebuilt images.
+  ```bash
+  docker pull nginx
+  ```
+
+### Running a Container
+- Start a container using the image:
+  ```bash
+  docker run -d -p 80:80 nginx
+  ```
+- Explanation:
+  - `-d`: Detached mode (runs in the background)
+  - `-p 80:80`: Maps port 80 of the container to port 80 on the host
+
+### Listing and Managing Containers
+- List running containers:
+  ```bash
+  docker ps
+  ```
+- List all containers (including stopped ones):
+  ```bash
+  docker ps -a
+  ```
+- Stop a container:
+  ```bash
+  docker stop <container_id>
+  ```
+- Remove a container:
+  ```bash
+  docker rm <container_id>
+  ```
+
+---
+
+## ✅ **Day 28: Dockerfile and Building Images**
+
