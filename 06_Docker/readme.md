@@ -69,3 +69,42 @@ Welcome to **Week 5** of your DevOps journey! This week focuses on Docker, a cri
 
 ## ✅ **Day 28: Dockerfile and Building Images**
 
+### What is a Dockerfile?
+- A Dockerfile is a script that contains a series of instructions to build a Docker image.
+- Example Dockerfile for a simple Python app:
+  ```dockerfile
+  # Use official Python image
+  FROM python:3.12-slim
+
+  # Set working directory
+  WORKDIR /app
+
+  # Copy files
+  COPY . /app
+
+  # Install dependencies
+  RUN pip install -r requirements.txt
+
+  # Run the app
+  CMD ["python", "app.py"]
+  ```
+
+### Building an Image
+- Run the following command to build an image:
+  ```bash
+  docker build -t my-python-app .
+  ```
+- Explanation:
+  - `-t`: Tag the image with a name
+
+### Running the Built Image
+- Start a container from the custom image:
+  ```bash
+  docker run -d -p 5000:5000 my-python-app
+  ```
+
+---
+
+## ✅ **Day 29: Docker Volumes and Data Management**
+
+
