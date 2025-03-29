@@ -107,4 +107,38 @@ Welcome to **Week 5** of your DevOps journey! This week focuses on Docker, a cri
 
 ## ✅ **Day 29: Docker Volumes and Data Management**
 
+### What are Docker Volumes?
+- Docker volumes are used to store persistent data.
+- Containers are ephemeral, meaning data inside them is lost when they stop. Volumes ensure data persists across container restarts.
+
+### Creating and Using Volumes
+- Create a volume:
+  ```bash
+  docker volume create my-volume
+  ```
+- Use the volume with a container:
+  ```bash
+  docker run -d -v my-volume:/app/data nginx
+  ```
+- Explanation:
+  - `-v`: Mounts the volume to the container's `/app/data` directory
+
+### Managing Volumes
+- List volumes:
+  ```bash
+  docker volume ls
+  ```
+- Inspect a volume:
+  ```bash
+  docker volume inspect my-volume
+  ```
+- Remove a volume:
+  ```bash
+  docker volume rm my-volume
+  ```
+
+---
+
+## ✅ **Day 30: Docker Networking**
+
 
