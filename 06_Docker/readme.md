@@ -141,4 +141,60 @@ Welcome to **Week 5** of your DevOps journey! This week focuses on Docker, a cri
 
 ## ✅ **Day 30: Docker Networking**
 
+### Docker Networking Concepts
+- Docker uses networks to allow containers to communicate.
+- Three main types of networks:
+  - **Bridge**: Default network for containers on the same host.
+  - **Host**: Container uses the host's network directly.
+  - **None**: No network connection.
+
+### Creating a Network
+- Create a custom network:
+  ```bash
+  docker network create my-network
+  ```
+
+### Connecting Containers to Networks
+- Run a container in a specific network:
+  ```bash
+  docker run -d --network my-network nginx
+  ```
+- List networks:
+  ```bash
+  docker network ls
+  ```
+- Inspect a network:
+  ```bash
+  docker network inspect my-network
+  ```
+
+### Container Communication
+- Containers on the same network can communicate using container names.
+- Example:
+  ```bash
+  docker run -d --name web --network my-network nginx
+  docker run -it --network my-network alpine sh
+  ping web
+  ```
+
+---
+
+## 📌 **Weekly Summary**
+
+This week, you learned the foundational concepts of Docker. Here’s a recap:
+
+- **Day 26:** Introduction to Docker, containers, images, and installation.
+- **Day 27:** Working with Docker images and containers.
+- **Day 28:** Building custom Docker images using Dockerfiles.
+- **Day 29:** Managing persistent data using Docker volumes.
+- **Day 30:** Networking containers using Docker networks.
+
+By now, you should be comfortable running containers, building images, managing data with volumes, and setting up container networks.
+
+**Next Week:** You'll explore advanced Docker topics like Docker Compose and container orchestration!
+
+---
+
+**Keep practicing and happy learning! 🚀**
+
 
