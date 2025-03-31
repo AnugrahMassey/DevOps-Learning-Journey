@@ -195,6 +195,43 @@ By now, you should be comfortable running containers, building images, managing 
 
 ---
 
-**Keep practicing and happy learning! 🚀**
 
+# Week 6: Docker Advanced (Day 31-35)
+
+Welcome to **Week 6**! This week focuses on advanced Docker concepts to deepen your containerization skills. We'll explore multi-container management, Docker Compose, container registries, networking, and volume management. By the end of this week, you'll be able to manage complex applications using Docker effectively.
+
+## ✅ **Day 31: Docker Compose Basics**
+### What is Docker Compose?
+Docker Compose is a tool that allows you to define and manage multi-container Docker applications using a YAML file (`docker-compose.yml`). It simplifies the management of interconnected containers.
+
+### Key Concepts:
+- **Services:** Containers that work together.
+- **Networks:** Provide communication between containers.
+- **Volumes:** Persist data across container restarts.
+
+### Installation:
+```bash
+sudo apt-get install docker-compose
+```
+
+### Example: Simple Web App with Docker Compose
+```yaml
+version: '3.8'
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+  redis:
+    image: redis
+```
+
+### Commands to Use:
+- `docker-compose up` - Start containers.
+- `docker-compose down` - Stop and remove containers.
+- `docker-compose logs` - View logs of services.
+
+---
+
+## ✅ **Day 32: Multi-Container Applications**
 
