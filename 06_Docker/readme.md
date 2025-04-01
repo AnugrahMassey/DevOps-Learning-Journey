@@ -200,68 +200,105 @@ By now, you should be comfortable running containers, building images, managing 
 
 Welcome to **Week 6**! This week focuses on advanced Docker concepts to deepen your containerization skills. We'll explore multi-container management, Docker Compose, container registries, networking, and volume management. By the end of this week, you'll be able to manage complex applications using Docker effectively.
 
-## ✅ **Day 31: Docker Compose Basics**
-### What is Docker Compose?
-Docker Compose is a tool that allows you to define and manage multi-container Docker applications using a YAML file (`docker-compose.yml`). It simplifies the management of interconnected containers.
+---
 
-### Key Concepts:
-- **Services:** Containers that work together.
-- **Networks:** Provide communication between containers.
-- **Volumes:** Persist data across container restarts.
+## **🗓️ Day 31: Understanding Docker Compose**  
+Docker Compose is a tool that helps you **define and run multi-container Docker applications** using a single YAML file. Instead of manually running multiple `docker run` commands, Compose automates this process.  
 
-### Installation:
+### **🔹 Why Use Docker Compose?**
+- Simplifies multi-container management.
+- Allows defining containers, networks, and volumes in one place.
+- Easy to start and stop all services with `docker-compose up/down`.
+
+### **🔹 Installing Docker Compose**
+Most Docker installations include Compose by default. Check the version:
 ```bash
-sudo apt-get install docker-compose
+docker-compose --version
+```
+If not installed, use:
+```bash
+sudo apt install docker-compose -y   # Ubuntu/Debian
+brew install docker-compose          # macOS
 ```
 
-### Example: Simple Web App with Docker Compose
+### **🔹 Basic Docker Compose YAML File**
 ```yaml
 version: '3.8'
+
 services:
   web:
     image: nginx
     ports:
-      - "80:80"
-  redis:
-    image: redis
-```
+      - "8080:80"
 
-### Commands to Use:
-- `docker-compose up` - Start containers.
-- `docker-compose down` - Stop and remove containers.
-- `docker-compose logs` - View logs of services.
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+```
+- **Services:** Define multiple containers (`web` for Nginx, `db` for MySQL).
+- **Ports:** Expose ports for communication.
+- **Environment:** Pass environment variables.
+
+### **🔹 Running the Multi-Container App**
+```bash
+docker-compose up -d
+```
+To stop:
+```bash
+docker-compose down
+```
 
 ---
 
-## ✅ **Day 32: Multi-Container Applications**
+## **🗓️ Day 32: Defining Multi-Container Applications**  
+Now, let’s build a real-world **multi-container setup** using **Docker Compose**.  
 
-### Why Multi-Container?
-Most applications involve multiple services, like databases, web servers, and caching systems. Docker Compose helps manage these efficiently.
-
-### Example: Web App with Database
+### **🔹 Example: WordPress + MySQL Setup**
 ```yaml
 version: '3.8'
+
 services:
-  web:
-    build: .
+  wordpress:
+    image: wordpress
     ports:
-      - "5000:5000"
-    depends_on:
-      - db
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wordpress
+
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: example
-```
-### Explanation:
-- `build` - Builds Dockerfile in the current directory.
-- `depends_on` - Ensures db starts before the web service.
-- `environment` - Passes environment variables to the container.
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - db_data:/var/lib/mysql
 
-### Commands:
-- `docker-compose ps` - Check running services.
-- `docker-compose exec <service_name> bash` - Access the container.
+volumes:
+  db_data:
+```
+- **WordPress container:** Serves the website.
+- **MySQL container:** Stores the database.
+- **Volumes:** Persist database data.
+
+### **🔹 Running the Application**
+```bash
+docker-compose up -d
+```
+- Access **WordPress** at `http://localhost:8080`
+- Stop all services:
+```bash
+docker-compose down
+```
 
 ---
 
-## ✅ **Day 33: Docker Networking Advance**
+## **🗓️ Day 33: Docker Networking with Compose** 
