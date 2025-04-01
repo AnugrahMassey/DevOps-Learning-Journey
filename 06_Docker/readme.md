@@ -235,3 +235,33 @@ services:
 
 ## ✅ **Day 32: Multi-Container Applications**
 
+### Why Multi-Container?
+Most applications involve multiple services, like databases, web servers, and caching systems. Docker Compose helps manage these efficiently.
+
+### Example: Web App with Database
+```yaml
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+```
+### Explanation:
+- `build` - Builds Dockerfile in the current directory.
+- `depends_on` - Ensures db starts before the web service.
+- `environment` - Passes environment variables to the container.
+
+### Commands:
+- `docker-compose ps` - Check running services.
+- `docker-compose exec <service_name> bash` - Access the container.
+
+---
+
+## ✅ **Day 33: Docker Networking Advance**
