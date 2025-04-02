@@ -302,3 +302,56 @@ docker-compose down
 ---
 
 ## **🗓️ Day 33: Docker Networking with Compose** 
+
+**Docker Networking** is crucial for communication between services.
+
+### **🔹 Default Networks in Docker Compose**
+Docker Compose **automatically creates a network** so services can talk to each other by name (e.g., `db`, `wordpress`).  
+
+### **🔹 Custom Networks in Docker Compose**
+You can define custom networks like this:
+```yaml
+version: '3.8'
+
+services:
+  web:
+    image: nginx
+    networks:
+      - frontend
+
+  app:
+    image: myapp
+    networks:
+      - frontend
+      - backend
+
+  db:
+    image: postgres
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
+```
+Here:
+- `web` and `app` share the **frontend** network.
+- `app` and `db` share the **backend** network.
+
+### **🔹 Running and Inspecting Networks**
+Run the stack:
+```bash
+docker-compose up -d
+```
+List networks:
+```bash
+docker network ls
+```
+Inspect a network:
+```bash
+docker network inspect backend
+```
+
+---
+
+## **🗓️ Day 34: Docker Registries & Pushing Images**  
