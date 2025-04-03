@@ -355,3 +355,34 @@ docker network inspect backend
 ---
 
 ## **🗓️ Day 34: Docker Registries & Pushing Images**  
+
+Docker Registries store and distribute Docker images. The most popular one is **Docker Hub**, but you can also use **private registries**.
+
+### **🔹 Logging into Docker Hub**
+```bash
+docker login
+```
+### **🔹 Tagging and Pushing Images**
+```bash
+docker tag myapp:latest myusername/myapp:v1
+docker push myusername/myapp:v1
+```
+To **pull** an image:
+```bash
+docker pull myusername/myapp:v1
+```
+
+### **🔹 Setting Up a Private Docker Registry**
+Run a **local registry**:
+```bash
+docker run -d -p 5000:5000 --name registry registry:2
+```
+Tag and push:
+```bash
+docker tag myapp localhost:5000/myapp
+docker push localhost:5000/myapp
+```
+
+---
+
+## **🗓️ Day 35: Multi-Stage Builds for Optimization**  
