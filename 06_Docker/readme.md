@@ -433,4 +433,4 @@ docker run -p 3000:3000 myapp
 
 This concludes **Week 6: Docker Advanced**. You now have a strong foundation in **Docker Compose, Networking, Registries, and Multi-Stage Builds**. 🎯  
 
-Next, we'll dive into **Week 7: Kubernetes Basics (Day 36-40)**. 🚀 Let me know if you need any clarifications!
+Next, we'll dive into **Week 7: Kubernetes Basics (Day 36-40)**. 🚀
