@@ -386,3 +386,51 @@ docker push localhost:5000/myapp
 ---
 
 ## **🗓️ Day 35: Multi-Stage Builds for Optimization**  
+
+Multi-stage builds **reduce image size** by keeping only necessary files.  
+
+### **🔹 Example: Optimized Node.js App**
+```dockerfile
+# Stage 1 - Build
+FROM node:14 AS builder
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
+
+# Stage 2 - Run
+FROM node:14
+WORKDIR /app
+COPY --from=builder /app/dist .
+CMD ["node", "server.js"]
+```
+Here:
+- First **builds** the app (`builder` stage).
+- Second **runs** only the final output.
+
+### **🔹 Benefits of Multi-Stage Builds**
+✅ **Smaller Image Sizes**  
+✅ **Faster Deployment**  
+✅ **Better Security** (No unnecessary files)
+
+Build and run:
+```bash
+docker build -t myapp .
+docker run -p 3000:3000 myapp
+```
+
+---
+
+## **📌 Week 6 Summary (Docker Advanced Recap)**  
+| Day | Topic | Summary |
+|----|--------|---------|
+| **31** | Docker Compose Basics | Define multi-container applications with a YAML file. |
+| **32** | Multi-Container Apps | WordPress + MySQL with Docker Compose. |
+| **33** | Docker Networking | Custom networks for inter-container communication. |
+| **34** | Docker Registries | Push and pull images from Docker Hub and private registries. |
+| **35** | Multi-Stage Builds | Optimize image size and security using multi-stage builds. |
+
+---
+
+This concludes **Week 6: Docker Advanced**. You now have a strong foundation in **Docker Compose, Networking, Registries, and Multi-Stage Builds**. 🎯  
+
+Next, we'll dive into **Week 7: Kubernetes Basics (Day 36-40)**. 🚀 Let me know if you need any clarifications!
