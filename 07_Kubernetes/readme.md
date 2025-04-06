@@ -46,3 +46,65 @@ kubectl get nodes
 ---
 
 ## **🗓️ Day 37: Kubernetes Pods & Deployments**  
+
+A **Pod** is the smallest deployable unit in Kubernetes. A **Deployment** manages Pods and ensures they run as expected.
+
+### **🔹 Creating a Pod (Manually)**
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80
+```
+Apply the Pod:
+```bash
+kubectl apply -f pod.yaml
+```
+Check running Pods:
+```bash
+kubectl get pods
+```
+
+### **🔹 Deployments (Managing Multiple Pods)**
+A Deployment ensures a specified number of Pods run and can **auto-restart** if they fail.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+```
+Apply it:
+```bash
+kubectl apply -f deployment.yaml
+```
+Verify:
+```bash
+kubectl get deployments
+kubectl get pods
+```
+
+---
+
+## **🗓️ Day 38: Services & Exposing Applications**  
