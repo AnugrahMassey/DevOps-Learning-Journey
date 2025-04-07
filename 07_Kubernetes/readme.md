@@ -108,3 +108,45 @@ kubectl get pods
 ---
 
 ## **🗓️ Day 38: Services & Exposing Applications**  
+
+By default, Pods in Kubernetes **cannot be accessed externally**. **Services** allow communication between Pods and external clients.
+
+### **🔹 Types of Services**
+| Service Type | Description |
+|-------------|------------|
+| **ClusterIP** | Default; exposes the service internally. |
+| **NodePort** | Exposes the service on a static port across nodes. |
+| **LoadBalancer** | Uses a cloud provider’s load balancer (AWS, GCP, etc.). |
+
+### **🔹 Creating a Service (NodePort Example)**
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: NodePort
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30008
+```
+Apply it:
+```bash
+kubectl apply -f service.yaml
+```
+Get the Service details:
+```bash
+kubectl get svc
+```
+Access the app in the browser:
+```
+http://<NODE_IP>:30008
+```
+
+---
+
+## **🗓️ Day 39: ConfigMaps & Secrets (Managing Configuration)**  
