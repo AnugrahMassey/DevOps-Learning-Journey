@@ -150,3 +150,51 @@ http://<NODE_IP>:30008
 ---
 
 ## **🗓️ Day 39: ConfigMaps & Secrets (Managing Configuration)**  
+
+Kubernetes provides **ConfigMaps** and **Secrets** to manage configurations separately from code.
+
+### **🔹 ConfigMaps (Store Non-Sensitive Data)**
+Used for environment variables, database URLs, etc.
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  database_url: "mongodb://mongo:27017"
+```
+Apply it:
+```bash
+kubectl apply -f configmap.yaml
+```
+Use it in a Pod:
+```yaml
+env:
+  - name: DATABASE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: app-config
+        key: database_url
+```
+
+### **🔹 Secrets (Store Sensitive Data)**
+Used for passwords, API keys, etc.
+
+Create a secret:
+```bash
+kubectl create secret generic db-secret --from-literal=password=MySecurePass
+```
+Use it in a Pod:
+```yaml
+env:
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db-secret
+        key: password
+```
+
+---
+
+## **🗓️ Day 40: Ingress Controllers (Advanced Routing)**  
