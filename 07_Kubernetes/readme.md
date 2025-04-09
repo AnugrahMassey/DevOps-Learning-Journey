@@ -198,3 +198,51 @@ env:
 ---
 
 ## **🗓️ Day 40: Ingress Controllers (Advanced Routing)**  
+
+Ingress is used to expose services externally **via domain names** instead of IP addresses.
+
+### **🔹 Ingress Example**
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  rules:
+    - host: myapp.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-service
+                port:
+                  number: 80
+```
+Apply it:
+```bash
+kubectl apply -f ingress.yaml
+```
+Verify:
+```bash
+kubectl get ingress
+```
+Update `/etc/hosts` (Linux/macOS):
+```bash
+echo "127.0.0.1 myapp.local" | sudo tee -a /etc/hosts
+```
+Now, you can access **http://myapp.local** 🎉
+
+---
+
+## **📌 Week 7 Summary (Kubernetes Basics Recap)**  
+| Day | Topic | Summary |
+|----|--------|---------|
+| **36** | Kubernetes Architecture | Understanding Kubernetes components (Master, Worker, etc.). |
+| **37** | Pods & Deployments | Deploying containerized apps in Kubernetes. |
+| **38** | Services | Exposing applications using different service types. |
+| **39** | ConfigMaps & Secrets | Managing configurations and sensitive data securely. |
+| **40** | Ingress Controllers | Advanced routing with domain-based access. |
+
+---
