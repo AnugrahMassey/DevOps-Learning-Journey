@@ -246,3 +246,65 @@ Now, you can access **http://myapp.local** 🎉
 | **40** | Ingress Controllers | Advanced routing with domain-based access. |
 
 ---
+
+# **📌 Week 8: Kubernetes Advanced**  
+This week focuses on **Helm, Operators, RBAC (Role-Based Access Control), and Kubernetes Networking**. These are essential for managing complex applications, securing access, and optimizing cluster networking.  
+
+By the end of this week, you’ll understand **how to use Helm for package management, deploy custom Kubernetes Operators, implement RBAC for security, and manage advanced networking concepts**.
+
+---
+
+## **🗓️ Day 41: Helm - Kubernetes Package Manager**  
+Helm is a package manager for Kubernetes, similar to **apt/yum** for Linux. It simplifies installing, upgrading, and managing applications.
+
+### **🔹 Why Use Helm?**
+- **Easier Deployments** → Install complex applications with one command.
+- **Version Control** → Rollback to previous versions easily.
+- **Reusable Templates** → Helm **Charts** allow defining reusable YAML templates.
+
+### **🔹 Installing Helm**
+```bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+Verify installation:
+```bash
+helm version
+```
+
+### **🔹 Using Helm Charts**
+Helm **Charts** are packaged Kubernetes applications.
+
+#### **Installing a Chart (Example: Nginx)**
+```bash
+helm repo add stable https://charts.helm.sh/stable
+helm repo update
+helm install my-nginx stable/nginx-ingress
+```
+List installed Helm releases:
+```bash
+helm list
+```
+#### **Uninstalling a Chart**
+```bash
+helm uninstall my-nginx
+```
+
+### **🔹 Creating Your Own Helm Chart**
+1️⃣ Create a new chart:
+```bash
+helm create mychart
+```
+2️⃣ Structure of a Helm Chart:
+```
+mychart/
+│── templates/         # YAML templates
+│── values.yaml        # Default configuration
+│── Chart.yaml         # Chart metadata
+```
+3️⃣ Install your custom chart:
+```bash
+helm install my-app mychart/
+```
+---
+
+## **🗓️ Day 42: Kubernetes Operators**  
