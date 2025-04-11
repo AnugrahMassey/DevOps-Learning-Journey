@@ -308,3 +308,46 @@ helm install my-app mychart/
 ---
 
 ## **🗓️ Day 42: Kubernetes Operators**  
+
+Kubernetes **Operators** extend Kubernetes capabilities by automating complex tasks like database backups and self-healing applications.
+
+### **🔹 What is an Operator?**
+An Operator is a **custom controller** that manages application lifecycles using **Custom Resource Definitions (CRDs)**.
+
+| **Component** | **Description** |
+|--------------|----------------|
+| **Custom Resource (CR)** | A new resource type (e.g., `MyDatabase`). |
+| **Custom Resource Definition (CRD)** | Defines the structure of CRs. |
+| **Operator Controller** | Automates app-specific tasks (e.g., scaling, healing). |
+
+### **🔹 Example: Deploying a MySQL Operator**
+1️⃣ Install Operator SDK:
+```bash
+curl -LO https://github.com/operator-framework/operator-sdk/releases/download/v1.15.0/operator-sdk_linux_amd64
+chmod +x operator-sdk_linux_amd64
+sudo mv operator-sdk_linux_amd64 /usr/local/bin/operator-sdk
+```
+2️⃣ Apply MySQL Operator:
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/mysql-operator/main/deploy/crds/mysql_v1alpha1_mysqlcluster_crd.yaml
+```
+3️⃣ Deploy a MySQL Database:
+```yaml
+apiVersion: mysql.oracle.com/v1alpha1
+kind: MySQLCluster
+metadata:
+  name: my-db
+spec:
+  replicas: 3
+```
+```bash
+kubectl apply -f my-db.yaml
+```
+Verify:
+```bash
+kubectl get mysqlclusters
+```
+
+---
+
+## **🗓️ Day 43: Role-Based Access Control (RBAC) in Kubernetes**  
