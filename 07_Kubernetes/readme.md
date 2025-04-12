@@ -351,3 +351,57 @@ kubectl get mysqlclusters
 ---
 
 ## **🗓️ Day 43: Role-Based Access Control (RBAC) in Kubernetes**  
+
+RBAC controls **who can access what** in the cluster, improving security.
+
+### **🔹 RBAC Components**
+| **Component** | **Description** |
+|--------------|----------------|
+| **Role** | Defines permissions within a namespace. |
+| **ClusterRole** | Defines permissions across the entire cluster. |
+| **RoleBinding** | Assigns a **Role** to a user or service account. |
+| **ClusterRoleBinding** | Assigns a **ClusterRole** to a user or service account. |
+
+### **🔹 Example: Creating an RBAC Role**
+1️⃣ Define a Role that allows reading Pods:
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: pod-reader
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "watch", "list"]
+```
+```bash
+kubectl apply -f role.yaml
+```
+2️⃣ Create a RoleBinding to assign the Role to a user:
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pod-reader-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: my-user
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+```
+```bash
+kubectl apply -f rolebinding.yaml
+```
+Check permissions:
+```bash
+kubectl auth can-i list pods --as=my-user
+```
+
+---
+
+## **🗓️ Day 44: Kubernetes Networking - Services, DNS, and Network Policies**  
