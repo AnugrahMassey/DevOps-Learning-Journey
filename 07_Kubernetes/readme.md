@@ -405,3 +405,63 @@ kubectl auth can-i list pods --as=my-user
 ---
 
 ## **🗓️ Day 44: Kubernetes Networking - Services, DNS, and Network Policies**  
+
+Networking in Kubernetes ensures that **Pods can communicate** with each other and external clients.
+
+### **🔹 Key Networking Concepts**
+| **Component** | **Description** |
+|--------------|----------------|
+| **Pod Networking** | Every Pod gets a unique IP address. |
+| **Cluster Networking** | Network plugins (CNI) handle traffic routing. |
+| **Services** | Expose Pods inside or outside the cluster. |
+| **Ingress** | Manages external access using hostnames. |
+
+### **🔹 Kubernetes DNS**
+Kubernetes has **built-in DNS** to allow service discovery.
+
+Check Pod’s DNS resolution:
+```bash
+kubectl run -it --rm dns-test --image=busybox -- nslookup my-service.default.svc.cluster.local
+```
+
+### **🔹 Network Policies (Security Rules)**
+Network Policies control traffic **between Pods**.
+
+1️⃣ Deny all traffic by default:
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+```
+```bash
+kubectl apply -f deny-all.yaml
+```
+
+2️⃣ Allow traffic only from specific Pods:
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-from-app
+spec:
+  podSelector:
+    matchLabels:
+      app: database
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: backend
+```
+```bash
+kubectl apply -f allow-from-app.yaml
+```
+
+---
+
+## **🗓️ Day 45: Kubernetes Logging & Monitoring**  
