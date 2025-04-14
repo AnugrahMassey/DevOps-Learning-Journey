@@ -465,3 +465,57 @@ kubectl apply -f allow-from-app.yaml
 ---
 
 ## **🗓️ Day 45: Kubernetes Logging & Monitoring**  
+Monitoring and logging help track cluster health and troubleshoot issues.
+
+### **🔹 Logging with kubectl**
+View logs of a Pod:
+```bash
+kubectl logs my-pod
+```
+Stream logs:
+```bash
+kubectl logs -f my-pod
+```
+
+### **🔹 Centralized Logging with ELK Stack**
+**ELK (Elasticsearch, Logstash, Kibana)** collects and visualizes logs.
+
+1️⃣ Deploy ELK:
+```bash
+helm repo add elastic https://helm.elastic.co
+helm install elasticsearch elastic/elasticsearch
+helm install kibana elastic/kibana
+```
+2️⃣ View logs in Kibana:
+```
+http://<KIBANA_IP>:5601
+```
+
+### **🔹 Monitoring with Prometheus & Grafana**
+Install Prometheus:
+```bash
+helm install prometheus prometheus-community/kube-prometheus-stack
+```
+Install Grafana:
+```bash
+helm install grafana grafana/grafana
+```
+Access Grafana:
+```
+http://<GRAFANA_IP>:3000
+```
+
+---
+
+## **📌 Week 8 Summary (Kubernetes Advanced Recap)**  
+| Day | Topic | Summary |
+|----|--------|---------|
+| **41** | Helm | Package manager for Kubernetes. |
+| **42** | Operators | Automating complex applications. |
+| **43** | RBAC | Securing cluster access. |
+| **44** | Networking | Services, DNS, and Network Policies. |
+| **45** | Logging & Monitoring | Tracking cluster health with ELK, Prometheus & Grafana. |
+
+---
+
+This concludes **Week 8: Kubernetes Advanced**. You now have a **strong grasp of Helm, Operators, RBAC, Kubernetes Networking, and Monitoring**. 🎯  
