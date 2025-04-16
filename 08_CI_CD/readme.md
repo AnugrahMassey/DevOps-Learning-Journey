@@ -52,3 +52,40 @@ Follow the setup wizard to configure Jenkins.
 ---
 
 ## **🗓️ Day 47: Creating a CI/CD Pipeline with Jenkins**  
+
+### **🔹 What is a Jenkins Pipeline?**
+A **Jenkins Pipeline** is a script-based process defining how code moves from **development to production**.
+
+### **🔹 Creating a Simple CI Pipeline**
+1️⃣ Open Jenkins → **New Item** → Select **Pipeline**  
+2️⃣ Define pipeline steps in a **Jenkinsfile**  
+
+**Example Jenkinsfile (Build + Test)**  
+```groovy
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/your-username/sample-project.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'make build'  # Replace with build command
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'make test'  # Replace with test command
+            }
+        }
+    }
+}
+```
+3️⃣ Run the pipeline to see automated **build & testing**.
+
+---
+
+## **🗓️ Day 48: GitHub Actions - Automating Workflows**  
+
