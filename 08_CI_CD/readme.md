@@ -89,3 +89,39 @@ pipeline {
 
 ## **🗓️ Day 48: GitHub Actions - Automating Workflows**  
 
+### **🔹 What are GitHub Actions?**
+**GitHub Actions** allow you to define **CI/CD workflows** directly inside a GitHub repository.  
+
+### **🔹 Creating a GitHub Actions Workflow**
+1️⃣ In your GitHub repository, create:
+```
+.github/workflows/ci.yml
+```
+2️⃣ Define a CI/CD pipeline in **ci.yml**:
+
+```yaml
+name: CI Pipeline
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install
+      - name: Run Tests
+        run: npm test
+```
+✅ This runs on **every code push**  
+✅ Automatically **builds & tests the app**  
+
+3️⃣ **Commit & Push** → GitHub will run the action automatically.
+
+---
+
+## **🗓️ Day 49: GitLab CI/CD - Automating Pipelines**  
