@@ -125,3 +125,46 @@ jobs:
 ---
 
 ## **🗓️ Day 49: GitLab CI/CD - Automating Pipelines**  
+
+### **🔹 What is GitLab CI/CD?**
+**GitLab CI/CD** enables CI/CD directly in GitLab repositories using `.gitlab-ci.yml`.
+
+### **🔹 Setting Up a GitLab CI/CD Pipeline**
+1️⃣ In your GitLab repository, create `.gitlab-ci.yml`  
+
+2️⃣ Define CI/CD stages:
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building the application"
+    - make build
+
+test:
+  stage: test
+  script:
+    - echo "Running tests"
+    - make test
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying application"
+    - make deploy
+  only:
+    - main
+```
+✅ Runs automatically on **every push or merge request**  
+✅ Deploys the app when code is merged into **main** branch  
+
+3️⃣ **Commit & Push** → GitLab will **run the pipeline automatically**.
+
+---
+
+## **🗓️ Day 50: Deploying Applications with CI/CD**  
+
