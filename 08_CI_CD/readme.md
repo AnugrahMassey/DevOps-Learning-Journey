@@ -168,3 +168,55 @@ deploy:
 
 ## **🗓️ Day 50: Deploying Applications with CI/CD**  
 
+
+### **🔹 Deployment Strategies**
+| **Strategy** | **Description** |
+|-------------|----------------|
+| **Rolling Deployment** | Gradual replacement of old instances with new ones. |
+| **Blue-Green Deployment** | Two environments (Blue = current, Green = new), switch traffic. |
+| **Canary Deployment** | Release to a small subset before full rollout. |
+
+### **🔹 Deploying with Jenkins (Example)**
+1️⃣ Add a deployment stage in **Jenkinsfile**:
+```groovy
+stage('Deploy') {
+    steps {
+        sh 'kubectl apply -f deployment.yaml'
+    }
+}
+```
+2️⃣ **Run Pipeline** → It will deploy the application using **Kubernetes**.
+
+### **🔹 Deploying with GitHub Actions (Example)**
+Modify `ci.yml`:
+```yaml
+deploy:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Deploy to Kubernetes
+      run: kubectl apply -f deployment.yaml
+```
+✅ On **successful test completion**, it automatically deploys.
+
+---
+
+## **📌 Week 9 Summary (CI/CD Recap)**  
+| Day | Topic | Summary |
+|----|--------|---------|
+| **46** | CI/CD Basics & Jenkins Setup | Intro to CI/CD, installing Jenkins. |
+| **47** | Jenkins Pipelines | Building & testing apps with Jenkins. |
+| **48** | GitHub Actions | Automating workflows with GitHub CI/CD. |
+| **49** | GitLab CI/CD | Running pipelines in GitLab. |
+| **50** | Deploying with CI/CD | Automating deployments using Kubernetes. |
+
+---
+
+## **🎯 What You Learned This Week**
+✅ How CI/CD automates testing and deployment  
+✅ Setting up Jenkins, GitHub Actions & GitLab CI/CD  
+✅ Writing CI/CD pipelines for automated workflows  
+✅ Deploying applications automatically using CI/CD  
+
+---
+
+This concludes **Week 9: CI/CD Basics**. 🚀  
