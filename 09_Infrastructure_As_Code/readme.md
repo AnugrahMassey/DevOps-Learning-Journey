@@ -30,3 +30,59 @@ Infrastructure as Code (IaC) is the **process of managing and provisioning infra
 ---
 
 ## **🗓️ Day 52: Getting Started with Terraform**  
+
+### **🔹 What is Terraform?**
+Terraform is an **open-source IaC tool** that allows you to define and provision infrastructure using a **declarative configuration language**.
+
+### **🔹 Installing Terraform**
+#### **On Linux/macOS:**
+```bash
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt update && sudo apt install terraform -y
+```
+#### **On Windows (via Chocolatey)**
+```powershell
+choco install terraform
+```
+
+### **🔹 Creating a Simple Terraform Script**
+1️⃣ Create a new directory:
+```bash
+mkdir terraform-demo && cd terraform-demo
+```
+2️⃣ Create a file called `main.tf`:
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0" # Amazon Linux 2 AMI
+  instance_type = "t2.micro"
+}
+
+output "instance_ip" {
+  value = aws_instance.example.public_ip
+}
+```
+3️⃣ **Initialize Terraform**:
+```bash
+terraform init
+```
+4️⃣ **Plan the infrastructure**:
+```bash
+terraform plan
+```
+5️⃣ **Apply the configuration**:
+```bash
+terraform apply
+```
+6️⃣ **Destroy the infrastructure** when no longer needed:
+```bash
+terraform destroy
+```
+
+---
+
+## **🗓️ Day 53: Terraform Advanced Features**  
