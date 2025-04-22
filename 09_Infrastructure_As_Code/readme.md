@@ -86,3 +86,39 @@ terraform destroy
 ---
 
 ## **🗓️ Day 53: Terraform Advanced Features**  
+
+### **🔹 Understanding Terraform State**
+Terraform maintains a **state file (`terraform.tfstate`)** to track the current state of infrastructure.
+
+#### **Common Terraform Commands**
+| Command | Description |
+|---------|-------------|
+| `terraform init` | Initializes a Terraform working directory |
+| `terraform plan` | Shows what will change before applying |
+| `terraform apply` | Creates or updates infrastructure |
+| `terraform destroy` | Removes infrastructure |
+
+### **🔹 Terraform Modules**
+Terraform **modules** allow you to **reuse configurations**.
+Example:
+```hcl
+module "ec2_instance" {
+  source       = "./modules/ec2"
+  instance_type = "t2.micro"
+}
+```
+
+### **🔹 Terraform Variables**
+```hcl
+variable "instance_type" {
+  default = "t2.micro"
+}
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = var.instance_type
+}
+```
+
+---
+
+## **🗓️ Day 54: Ansible - Configuration Management**  
