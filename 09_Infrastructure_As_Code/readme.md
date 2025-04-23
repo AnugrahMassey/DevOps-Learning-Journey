@@ -122,3 +122,53 @@ resource "aws_instance" "example" {
 ---
 
 ## **🗓️ Day 54: Ansible - Configuration Management**  
+
+### **🔹 What is Ansible?**
+Ansible is a tool used for **automating server configuration and management**.
+
+### **🔹 Installing Ansible**
+#### **On Ubuntu/Linux:**
+```bash
+sudo apt update && sudo apt install ansible -y
+```
+#### **On macOS:**
+```bash
+brew install ansible
+```
+
+### **🔹 Ansible Inventory**
+Ansible uses an **inventory file (`hosts`)** to define servers.
+Example:
+```
+[webservers]
+192.168.1.10
+192.168.1.11
+```
+
+### **🔹 Writing an Ansible Playbook**
+A **playbook** defines configuration tasks.
+Example `nginx_setup.yml`:
+```yaml
+- name: Install and configure Nginx
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+```
+Run the playbook:
+```bash
+ansible-playbook -i hosts nginx_setup.yml
+```
+
+---
+
+## **🗓️ Day 55: AWS CloudFormation - Automating AWS Infrastructure**  
+
