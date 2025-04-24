@@ -172,3 +172,53 @@ ansible-playbook -i hosts nginx_setup.yml
 
 ## **🗓️ Day 55: AWS CloudFormation - Automating AWS Infrastructure**  
 
+### **🔹 What is AWS CloudFormation?**
+AWS CloudFormation **automates AWS resource provisioning** using **YAML/JSON templates**.
+
+### **🔹 Creating a CloudFormation Stack**
+1️⃣ Create a file `cloudformation.yml`:
+```yaml
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  MyInstance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      InstanceType: "t2.micro"
+      ImageId: "ami-0c55b159cbfafe1f0"
+```
+2️⃣ Deploy using AWS CLI:
+```bash
+aws cloudformation create-stack --stack-name MyStack --template-body file://cloudformation.yml
+```
+
+### **🔹 Updating a CloudFormation Stack**
+Modify `cloudformation.yml`, then update the stack:
+```bash
+aws cloudformation update-stack --stack-name MyStack --template-body file://cloudformation.yml
+```
+
+### **🔹 Deleting a CloudFormation Stack**
+```bash
+aws cloudformation delete-stack --stack-name MyStack
+```
+
+---
+
+## **📌 Week 10 Summary (IaC Recap)**  
+| Day | Topic | Summary |
+|----|--------|---------|
+| **51** | Intro to IaC | Understanding Infrastructure as Code (IaC) concepts. |
+| **52** | Terraform Basics | Installing Terraform and writing basic scripts. |
+| **53** | Advanced Terraform | Using variables, modules, and managing state. |
+| **54** | Ansible for Automation | Automating server configuration using Ansible. |
+| **55** | AWS CloudFormation | Automating AWS infrastructure deployment. |
+
+---
+
+## **🎯 What You Learned This Week**
+✅ What **Infrastructure as Code (IaC)** is  
+✅ Using **Terraform** to provision cloud infrastructure  
+✅ Automating **server configuration with Ansible**  
+✅ Using **AWS CloudFormation** for AWS automation  
+
+---
