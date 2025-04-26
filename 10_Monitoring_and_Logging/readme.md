@@ -40,3 +40,40 @@ Logging is the **process of capturing system and application events** to analyze
 ---
 
 # **🗓️ Day 57: Setting Up Prometheus for Monitoring**  
+
+### **🔹 What is Prometheus?**  
+Prometheus is an **open-source monitoring system** used for collecting, storing, and analyzing metrics.
+
+### **🔹 Installing Prometheus**  
+#### **On Ubuntu/Linux:**
+```bash
+sudo useradd --no-create-home --shell /bin/false prometheus
+sudo mkdir /etc/prometheus /var/lib/prometheus
+wget https://github.com/prometheus/prometheus/releases/latest/download/prometheus-linux-amd64.tar.gz
+tar xvf prometheus-linux-amd64.tar.gz
+sudo mv prometheus-linux-amd64/prometheus /usr/local/bin/
+sudo mv prometheus-linux-amd64/promtool /usr/local/bin/
+```
+
+### **🔹 Configuring Prometheus**
+Create a configuration file `/etc/prometheus/prometheus.yml`:
+```yaml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+```
+Start Prometheus:
+```bash
+prometheus --config.file=/etc/prometheus/prometheus.yml
+```
+
+### **🔹 Accessing Prometheus Dashboard**  
+Open **`http://localhost:9090`** in a browser to view metrics.
+
+---
+
+# **🗓️ Day 58: Visualizing Metrics with Grafana**  
