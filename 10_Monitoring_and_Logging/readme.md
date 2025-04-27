@@ -77,3 +77,40 @@ Open **`http://localhost:9090`** in a browser to view metrics.
 ---
 
 # **🗓️ Day 58: Visualizing Metrics with Grafana**  
+
+### **🔹 What is Grafana?**  
+Grafana is an **open-source data visualization tool** used to create **interactive dashboards** from Prometheus data.
+
+### **🔹 Installing Grafana**
+#### **On Ubuntu/Linux:**
+```bash
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+sudo apt update
+sudo apt install grafana -y
+```
+Start Grafana:
+```bash
+sudo systemctl start grafana-server
+```
+
+### **🔹 Connecting Prometheus to Grafana**
+1️⃣ Open Grafana: **`http://localhost:3000`**  
+2️⃣ Login (**username: admin, password: admin**)  
+3️⃣ Go to **Configuration → Data Sources**  
+4️⃣ Select **Prometheus** and set URL to **`http://localhost:9090`**  
+5️⃣ Save and test the connection  
+
+### **🔹 Creating a Dashboard**
+1️⃣ Click **Dashboards → New Dashboard**  
+2️⃣ Select **"Add Query"** and choose **Prometheus**  
+3️⃣ Use query:  
+```promql
+node_cpu_seconds_total
+```
+4️⃣ Save and customize the dashboard  
+
+---
+
+# **🗓️ Day 59: Logging with the ELK Stack**  
