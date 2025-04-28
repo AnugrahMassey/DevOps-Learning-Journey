@@ -114,3 +114,46 @@ node_cpu_seconds_total
 ---
 
 # **🗓️ Day 59: Logging with the ELK Stack**  
+
+### **🔹 What is the ELK Stack?**  
+The ELK Stack (Elasticsearch, Logstash, Kibana) is a **powerful logging tool** for **collecting, processing, and visualizing logs**.
+
+### **🔹 Installing ELK Stack**
+#### **On Ubuntu/Linux:**
+```bash
+sudo apt update
+sudo apt install -y elasticsearch logstash kibana
+```
+Start services:
+```bash
+sudo systemctl start elasticsearch
+sudo systemctl start logstash
+sudo systemctl start kibana
+```
+
+### **🔹 Configuring Logstash**
+Edit **`/etc/logstash/conf.d/syslog.conf`**:
+```yaml
+input {
+  file {
+    path => "/var/log/syslog"
+    start_position => "beginning"
+  }
+}
+output {
+  elasticsearch {
+    hosts => ["localhost:9200"]
+  }
+}
+```
+Start Logstash:
+```bash
+sudo systemctl restart logstash
+```
+
+### **🔹 Accessing Kibana**  
+Open **`http://localhost:5601`** and navigate to **Discover** to explore logs.
+
+---
+
+# **🗓️ Day 60: Setting Up Alerts and Log Analysis**  
