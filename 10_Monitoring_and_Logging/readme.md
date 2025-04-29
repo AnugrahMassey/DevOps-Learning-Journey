@@ -157,3 +157,45 @@ Open **`http://localhost:5601`** and navigate to **Discover** to explore logs.
 ---
 
 # **🗓️ Day 60: Setting Up Alerts and Log Analysis**  
+
+### **🔹 Why Alerts Are Important?**  
+✅ Helps detect system failures early  
+✅ Notifies teams about incidents  
+✅ Reduces downtime  
+
+### **🔹 Setting Up Alerts in Grafana**
+1️⃣ Go to **Alerts → New Alert**  
+2️⃣ Define a **trigger condition** (e.g., CPU usage > 80%)  
+3️⃣ Configure a **notification channel** (Slack, Email, PagerDuty)  
+4️⃣ Save the alert  
+
+### **🔹 Analyzing Logs in Kibana**
+1️⃣ Go to **Discover → Add Filters**  
+2️⃣ Search for errors:  
+```bash
+error OR failed
+```
+3️⃣ Visualize logs in **Dashboard**  
+
+---
+
+# **📌 Week 11 Summary: Monitoring & Logging Recap**  
+
+| Day | Topic | Summary |
+|----|--------|---------|
+| **56** | Monitoring vs Logging | Understanding the importance of monitoring and logging. |
+| **57** | Prometheus Setup | Installing and configuring Prometheus for system monitoring. |
+| **58** | Grafana Dashboards | Visualizing Prometheus metrics in Grafana. |
+| **59** | ELK Stack | Setting up Elasticsearch, Logstash, and Kibana for logging. |
+| **60** | Alerts & Log Analysis | Creating alerts in Grafana and analyzing logs in Kibana. |
+
+---
+
+# **🎯 What You Learned This Week**
+✅ What **monitoring and logging** are and why they’re important  
+✅ How to **collect system metrics using Prometheus**  
+✅ How to **create dashboards using Grafana**  
+✅ How to **analyze logs using the ELK Stack**  
+✅ How to **set up alerts for system failures**  
+
+---
