@@ -83,3 +83,30 @@ aws configure
 
 # **🗓️ Day 63: Introduction to Azure and Core Services**  
 
+
+### **🔹 What is Microsoft Azure?**  
+Azure is **Microsoft’s cloud platform**, providing a vast range of services for computing, networking, AI, and storage.
+
+### **🔹 Key Azure Services**  
+
+| **Category** | **Service** | **Purpose** |
+|-------------|------------|-------------|
+| **Compute** | Azure Virtual Machines (VMs) | Virtualized compute resources |
+| **Storage** | Azure Blob Storage | Scalable object storage |
+| **Networking** | Azure Virtual Network (VNet) | Secure networking for Azure resources |
+| **Database** | Azure SQL Database | Managed relational database service |
+| **Security** | Azure Active Directory | Identity and access management |
+
+### **🔹 Creating an Azure VM**  
+1️⃣ Log in to **Azure Portal → Virtual Machines → Create**  
+2️⃣ Choose an **OS** (e.g., Ubuntu 22.04)  
+3️⃣ Select a **VM size** (e.g., Standard_B1s)  
+4️⃣ Configure **networking and firewall rules**  
+5️⃣ Generate **SSH keys** and connect to VM:  
+```bash
+ssh -i my-azure-key.pem azureuser@<public-ip>
+```
+
+---
+
+# **🗓️ Day 64: Introduction to Google Cloud Platform (GCP)**  
