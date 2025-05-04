@@ -110,3 +110,31 @@ ssh -i my-azure-key.pem azureuser@<public-ip>
 ---
 
 # **🗓️ Day 64: Introduction to Google Cloud Platform (GCP)**  
+
+### **🔹 What is GCP?**  
+Google Cloud Platform (GCP) offers **cloud computing services** for **AI, networking, compute, and storage**.
+
+### **🔹 Key GCP Services**  
+
+| **Category** | **Service** | **Purpose** |
+|-------------|------------|-------------|
+| **Compute** | Compute Engine | Virtual machines |
+| **Storage** | Cloud Storage | Object storage |
+| **Networking** | VPC (Virtual Private Cloud) | Network management |
+| **Database** | Cloud SQL | Managed database service |
+| **Security** | IAM (Identity and Access Management) | User access control |
+
+### **🔹 Creating a VM in GCP**  
+1️⃣ Open **Google Cloud Console → Compute Engine**  
+2️⃣ Click **Create Instance**  
+3️⃣ Choose **Machine Type** (e.g., e2-micro – Free Tier)  
+4️⃣ Configure **firewall rules**  
+5️⃣ Click **Create** and connect via SSH:  
+```bash
+gcloud compute ssh instance-name
+```
+
+---
+
+# **🗓️ Day 65: Cloud Networking & Security Basics**  
+
