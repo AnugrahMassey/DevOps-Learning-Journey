@@ -138,3 +138,45 @@ gcloud compute ssh instance-name
 
 # **🗓️ Day 65: Cloud Networking & Security Basics**  
 
+### **🔹 What is Cloud Networking?**  
+Cloud networking involves managing **virtual networks, security groups, load balancers, and firewalls** in cloud environments.
+
+### **🔹 Key Networking Concepts**  
+
+| **Concept** | **Description** |
+|-------------|----------------|
+| **VPC (Virtual Private Cloud)** | A private cloud network for resources |
+| **Subnets** | Smaller divisions within a VPC |
+| **Security Groups** | Firewall rules to allow/block traffic |
+| **Load Balancer** | Distributes incoming traffic across servers |
+| **VPN (Virtual Private Network)** | Secure encrypted connection to cloud resources |
+
+### **🔹 Configuring Security Groups in AWS**  
+1️⃣ Go to **AWS EC2 → Security Groups**  
+2️⃣ Click **Create Security Group**  
+3️⃣ Add **Inbound Rule**:  
+   - **SSH (22) → My IP**  
+   - **HTTP (80) → Anywhere**  
+4️⃣ Assign Security Group to an EC2 instance.
+
+---
+
+# **📌 Week 12 Summary: Cloud Computing Basics Recap**  
+
+| Day | Topic | Summary |
+|----|--------|---------|
+| **61** | Cloud Computing Basics | Introduction to cloud computing models and benefits. |
+| **62** | AWS Fundamentals | Setting up EC2, IAM, and security configurations. |
+| **63** | Azure Fundamentals | Deploying VMs and understanding core services. |
+| **64** | GCP Fundamentals | Setting up Compute Engine and networking. |
+| **65** | Cloud Networking & Security | Understanding VPCs, subnets, security groups, and load balancers. |
+
+---
+
+# **🎯 What You Learned This Week**  
+✅ What **Cloud Computing** is and its benefits  
+✅ How to create and manage **AWS EC2, Azure VMs, and GCP Compute Engine**  
+✅ Basics of **cloud networking, security groups, and load balancing**  
+✅ The differences between **IaaS, PaaS, and SaaS**  
+
+---
