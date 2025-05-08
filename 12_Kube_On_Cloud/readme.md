@@ -78,3 +78,36 @@ kubectl get svc
 
 # **🗓️ Day 68: Deploying Kubernetes on Google Cloud (GKE)**  
 
+### **🔹 What is Google Kubernetes Engine (GKE)?**  
+Google Kubernetes Engine (GKE) is a fully managed Kubernetes service with automatic scaling, security, and networking optimizations.
+
+### **🔹 Steps to Deploy a GKE Cluster**  
+
+#### ✅ **Step 1: Install Google Cloud SDK & Enable GKE API**  
+```bash
+gcloud auth login
+gcloud config set project <your-project-id>
+gcloud services enable container.googleapis.com
+```
+
+#### ✅ **Step 2: Create a GKE Cluster**  
+```bash
+gcloud container clusters create my-gke-cluster --num-nodes=2 --zone us-central1-a
+gcloud container clusters get-credentials my-gke-cluster --zone us-central1-a
+kubectl get nodes
+```
+
+#### ✅ **Step 3: Deploy an Application on GKE**  
+```bash
+kubectl create deployment hello-world --image=gcr.io/google-samples/hello-app:1.0
+kubectl expose deployment hello-world --type=LoadBalancer --port=80
+kubectl get svc
+```
+You will get an **external IP**, which you can use to access your application.
+
+✅ **Your Kubernetes cluster is now running on GCP!** 🚀  
+
+---
+
+# **🗓️ Day 69: Deploying Kubernetes on Azure (AKS)**  
+
