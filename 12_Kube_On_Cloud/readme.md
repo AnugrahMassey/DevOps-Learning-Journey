@@ -110,4 +110,39 @@ You will get an **external IP**, which you can use to access your application.
 ---
 
 # **🗓️ Day 69: Deploying Kubernetes on Azure (AKS)**  
+### **🔹 What is Azure Kubernetes Service (AKS)?**  
+Azure Kubernetes Service (AKS) is Microsoft’s managed Kubernetes solution that integrates well with Azure’s security, networking, and monitoring tools.
+
+### **🔹 Steps to Deploy an AKS Cluster**  
+
+#### ✅ **Step 1: Install Azure CLI & Enable AKS**  
+```bash
+az login
+az group create --name myResourceGroup --location eastus
+```
+
+#### ✅ **Step 2: Create an AKS Cluster**  
+```bash
+az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 2 --enable-addons monitoring --generate-ssh-keys
+```
+This creates a **2-node Kubernetes cluster** with monitoring enabled.
+
+#### ✅ **Step 3: Connect to the Cluster**  
+```bash
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+kubectl get nodes
+```
+
+#### ✅ **Step 4: Deploy an Application on AKS**  
+```bash
+kubectl create deployment demo-app --image=mcr.microsoft.com/azuredocs/aks-helloworld:v1
+kubectl expose deployment demo-app --port=80 --type=LoadBalancer
+kubectl get svc
+```
+✅ Your AKS cluster is now running a public application! 🌍  
+
+---
+
+# **🗓️ Day 70: Cloud Kubernetes Networking, Security & Scaling**  
+
 
