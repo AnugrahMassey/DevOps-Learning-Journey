@@ -145,4 +145,40 @@ kubectl get svc
 
 # **🗓️ Day 70: Cloud Kubernetes Networking, Security & Scaling**  
 
+### **🔹 Kubernetes Networking in the Cloud**  
+- **Load Balancers** – Automatically created for public services (`LoadBalancer` type).  
+- **Ingress Controllers** – Used for routing traffic within the cluster.  
+- **Cloud VPC Integration** – Kubernetes nodes run inside cloud VPCs for isolation.
 
+### **🔹 Security in Cloud Kubernetes**  
+- **IAM & RBAC** – Control user access to Kubernetes resources.  
+- **Pod Security Policies** – Restrict container privileges.  
+- **Network Policies** – Define traffic rules between pods.  
+
+### **🔹 Scaling in Managed Kubernetes**  
+- **Cluster Auto-Scaling** – Adds/removes nodes based on demand.  
+- **Horizontal Pod Autoscaler (HPA)** – Adjusts the number of pods dynamically.  
+```bash
+kubectl autoscale deployment nginx-deploy --cpu-percent=50 --min=2 --max=10
+```
+
+---
+
+# **📌 Week 13 Summary: Deploying Kubernetes on Cloud**  
+
+| Day | Topic | Summary |
+|----|--------|---------|
+| **66** | Cloud-based Kubernetes | Introduction to managed Kubernetes services (EKS, GKE, AKS) |
+| **67** | Deploying Kubernetes on AWS (EKS) | Setting up a Kubernetes cluster using AWS EKS |
+| **68** | Deploying Kubernetes on Google Cloud (GKE) | Creating and managing Kubernetes on GKE |
+| **69** | Deploying Kubernetes on Azure (AKS) | Deploying Kubernetes clusters using Azure AKS |
+| **70** | Cloud Kubernetes Networking & Security | Managing networking, security, and scaling in cloud Kubernetes |
+
+---
+
+# **🎯 What You Learned This Week**  
+✅ How to **deploy Kubernetes on AWS, Google Cloud, and Azure**  
+✅ How to **run applications using managed Kubernetes services**  
+✅ How to **configure networking, security, and auto-scaling in cloud Kubernetes**  
+
+---
