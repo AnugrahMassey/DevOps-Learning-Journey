@@ -34,3 +34,34 @@ Serverless is a cloud-native development model that allows you to build and run 
 
 ### ✅ **Day 72: Understanding AWS Lambda**
 
+#### 🔹 What is AWS Lambda?
+
+AWS Lambda lets you run code without provisioning or managing servers. You write your logic, and AWS handles the rest.
+
+#### 🔹 Core Concepts:
+
+* **Function** – The code you want to run.
+* **Event Source** – What triggers the function (e.g., S3, API Gateway).
+* **Execution Role** – IAM permissions to execute actions (like reading from S3).
+
+#### 🔹 Example Use Case:
+
+1. A file is uploaded to S3.
+2. S3 triggers a Lambda function.
+3. The function processes the file (e.g., image resizing, parsing).
+
+#### 🔹 Hello World Example:
+
+```python
+def lambda_handler(event, context):
+    return {
+        'statusCode': 200,
+        'body': 'Hello from Lambda!'
+    }
+```
+
+> You can write Lambda functions in Python, Node.js, Go, Java, etc.
+
+---
+
+### ✅ **Day 73: API Gateway + Lambda (Building Serverless APIs)**
