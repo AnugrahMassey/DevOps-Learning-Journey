@@ -65,3 +65,29 @@ def lambda_handler(event, context):
 ---
 
 ### ✅ **Day 73: API Gateway + Lambda (Building Serverless APIs)**
+
+#### 🔹 What is API Gateway?
+
+A fully managed service to create, publish, and manage RESTful APIs that can trigger Lambda functions.
+
+#### 🔹 Why Use It?
+
+* Connect your Lambda functions to the web.
+* Handle request/response transformations.
+* Add security via API keys, rate limiting, etc.
+
+#### 🔹 Workflow:
+
+1. Create Lambda function.
+2. Create API Gateway and configure routes.
+3. Connect routes to Lambda.
+4. Deploy API → You get a public endpoint (URL).
+
+#### 🔹 Example Use Case:
+
+* Build a REST API with CRUD functionality backed by Lambda and DynamoDB.
+
+---
+
+### ✅ **Day 74: Introduction to Microservices Architecture**
+
