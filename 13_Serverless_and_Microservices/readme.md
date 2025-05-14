@@ -91,3 +91,29 @@ A fully managed service to create, publish, and manage RESTful APIs that can tri
 
 ### ✅ **Day 74: Introduction to Microservices Architecture**
 
+#### 🔹 What are Microservices?
+
+A design approach where applications are composed of small, independent services that communicate over APIs.
+
+#### 🔹 Characteristics:
+
+* Single Responsibility Principle (each service does one thing)
+* Independent deployment
+* Lightweight communication (e.g., REST, gRPC, message queues)
+
+#### 🔹 Benefits:
+
+* Scalability
+* Faster development
+* Better fault isolation
+* Easier to adopt new tech per service
+
+#### 🔹 Challenges:
+
+* Complexity in communication
+* Monitoring & logging across services
+* Deployment orchestration
+
+---
+
+### ✅ **Day 75: Building a Microservices Project (Conceptual)**
