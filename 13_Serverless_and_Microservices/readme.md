@@ -117,3 +117,45 @@ A design approach where applications are composed of small, independent services
 ---
 
 ### ✅ **Day 75: Building a Microservices Project (Conceptual)**
+
+#### 🔹 Real-World Example:
+
+E-commerce App with:
+
+* **Auth Service** (JWT, user registration/login)
+* **Product Service** (CRUD products)
+* **Order Service** (create orders)
+* **Notification Service** (send emails/SMS)
+
+#### 🔹 Communication:
+
+* Synchronous (REST APIs)
+* Asynchronous (using queues like RabbitMQ, Kafka)
+
+#### 🔹 Deployment:
+
+* Dockerize each service
+* Use Kubernetes to orchestrate
+* Add CI/CD for faster deployments
+
+#### 🔹 Tools for Microservices:
+
+* API Gateway (for routing traffic)
+* Service Mesh (e.g., Istio for managing service-to-service traffic)
+* Centralized Logging (e.g., ELK Stack)
+* Monitoring (Prometheus + Grafana)
+
+---
+
+## 📘 **Weekly Summary (Week 14)**
+
+| Day | Topic                   | Summary                                                                       |
+| --- | ----------------------- | ----------------------------------------------------------------------------- |
+| 71  | Serverless Basics       | Introduced the concept of serverless, its benefits, and common providers.     |
+| 72  | AWS Lambda              | Explored AWS Lambda's core components, triggers, and built a simple function. |
+| 73  | API Gateway + Lambda    | Learned how to expose Lambda functions through REST APIs.                     |
+| 74  | Microservices Basics    | Understood microservices architecture, advantages, and challenges.            |
+| 75  | Microservices in Action | Designed a sample microservices project with Docker and Kubernetes in mind.   |
+
+---
+
