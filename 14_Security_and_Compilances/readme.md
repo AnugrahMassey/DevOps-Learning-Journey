@@ -40,3 +40,34 @@ Secrets are confidential information such as:
 
 ### ✅ **Day 77: Role-Based Access Control (RBAC)**
 
+**Goal:** Understand how to limit access in systems through user roles.
+
+#### 🧩 What is RBAC?
+
+Role-Based Access Control defines:
+
+* **Who** can access
+* **What** resources
+* **What actions** they can perform
+
+#### ⚙️ RBAC in Different Tools:
+
+* **Linux**: `sudo`, user groups
+* **Kubernetes**: Roles, ClusterRoles, RoleBindings
+* **AWS IAM**: Users, Roles, Policies
+
+#### 🧪 Practice:
+
+* Create a new Linux user and limit them using groups.
+* In Kubernetes:
+
+  ```yaml
+  kind: Role
+  apiVersion: rbac.authorization.k8s.io/v1
+  ...
+  ```
+
+---
+
+### ✅ **Day 78: Secure CI/CD Pipelines**
+
