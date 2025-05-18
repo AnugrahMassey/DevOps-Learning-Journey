@@ -71,3 +71,27 @@ Role-Based Access Control defines:
 
 ### ✅ **Day 78: Secure CI/CD Pipelines**
 
+**Goal:** Secure your automation pipelines to avoid vulnerabilities.
+
+#### 🛡️ Security Considerations:
+
+* Avoid leaking secrets in logs.
+* Use secrets management plugins or encrypted variables.
+* Validate code with security linters.
+* Use signed artifacts and containers.
+
+#### 🧰 Tools:
+
+* GitHub Actions Secrets
+* Snyk, Trivy – security scanners
+* OPA, Conftest – policy as code
+
+#### 🧪 Practice:
+
+* Add secret variables in GitHub Actions.
+* Run `trivy image nginx` to scan a Docker image.
+
+---
+
+### ✅ **Day 79: Compliance Standards & Tools**
+
