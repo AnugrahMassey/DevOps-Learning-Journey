@@ -95,3 +95,26 @@ Role-Based Access Control defines:
 
 ### ✅ **Day 79: Compliance Standards & Tools**
 
+**Goal:** Understand industry standards and tools for achieving compliance.
+
+#### 🔒 Popular Standards:
+
+* **ISO/IEC 27001** – Security management
+* **SOC2** – Data privacy
+* **PCI-DSS** – Payment data protection
+* **HIPAA** – Health information
+
+#### ⚙️ Tools to Help:
+
+* **OpenSCAP** – Compliance scanning
+* **Aqua Security**, **Prisma Cloud**, **Checkov**
+* **AWS Config** – compliance rules in AWS
+
+#### 🧪 Practice:
+
+* Read about a compliance policy your project would need.
+* Run `checkov` on a Terraform or Kubernetes config.
+
+---
+
+### ✅ **Day 80: Final Project + Recap**
