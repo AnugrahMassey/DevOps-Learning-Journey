@@ -118,3 +118,36 @@ Role-Based Access Control defines:
 ---
 
 ### ✅ **Day 80: Final Project + Recap**
+
+**Goal:** Apply what you learned in a hands-on security enhancement task.
+
+#### 🛠️ Mini-Project Idea:
+
+* Create a GitHub Actions pipeline that:
+
+  * Uses secrets securely
+  * Scans Docker images
+  * Applies RBAC to Kubernetes deployment
+  * Logs audit activity
+
+#### 🧠 Recap:
+
+* Secrets should never be hard-coded.
+* RBAC controls **who** can do **what**.
+* CI/CD pipelines can leak secrets — secure them.
+* Use scanning tools regularly.
+* Know the compliance standard that applies to your work.
+
+---
+
+## 📝 Week 15 Summary:
+
+| Day | Topic                | Focus                                      |
+| --- | -------------------- | ------------------------------------------ |
+| 76  | Secrets Management   | Store and retrieve sensitive data securely |
+| 77  | RBAC                 | Limit user access based on roles           |
+| 78  | Secure Pipelines     | Harden CI/CD pipelines and prevent leaks   |
+| 79  | Compliance Standards | Learn policies and tools for audits        |
+| 80  | Project & Recap      | Hands-on implementation of secure pipeline |
+
+---
