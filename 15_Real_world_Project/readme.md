@@ -30,3 +30,27 @@
 ---
 
 ### 🔹 **Day 82: Preparing the Application for Deployment**
+
+#### 🧱 Key Steps:
+
+* Ensure your app is containerized (Docker).
+* Push your code to a GitHub/GitLab repository.
+* Create `Dockerfile` and `.dockerignore`.
+* Create a sample Kubernetes manifest (`deployment.yaml`, `service.yaml`).
+
+#### 🧪 Checklist:
+
+* ✅ Dockerized app (with Dockerfile)
+* ✅ Code stored in version control
+* ✅ Kubernetes manifests created
+* ✅ CI config file initialized (e.g., `.github/workflows/deploy.yml`)
+
+#### 🛠️ Tasks:
+
+* Write Dockerfile (multi-stage if possible)
+* Test locally with `docker build` and `docker run`
+* Push your image to a registry (e.g., DockerHub)
+
+---
+
+### 🔹 **Day 83: Automating the CI Process**
