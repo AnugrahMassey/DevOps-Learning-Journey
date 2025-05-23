@@ -54,3 +54,36 @@
 ---
 
 ### 🔹 **Day 83: Automating the CI Process**
+
+#### ⚙️ What to automate:
+
+* Linting the code
+* Running unit/integration tests
+* Building Docker images
+
+#### 🧰 Example (GitHub Actions):
+
+```yaml
+name: CI Workflow
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+    - name: Build Docker image
+      run: docker build -t your-image-name .
+```
+
+#### 🛠️ Tasks:
+
+* Set up GitHub Actions for your app
+* Automate image builds and push to DockerHub or AWS ECR/GCR
+* Trigger pipeline on `git push`
+
+---
+
+### 🔹 **Day 84: Automating the CD Process (Kubernetes Deployment)**
+
