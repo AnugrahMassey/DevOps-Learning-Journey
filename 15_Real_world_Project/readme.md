@@ -87,3 +87,26 @@ jobs:
 
 ### 🔹 **Day 84: Automating the CD Process (Kubernetes Deployment)**
 
+#### 🚀 Deployment Flow:
+
+* Monitor container registry for changes
+* Pull latest Docker image
+* Apply updated Kubernetes manifests
+* Optional: Use Helm for templating deployments
+
+#### 🔐 Best Practices:
+
+* Use secrets securely (K8s secrets, GitHub secrets)
+* Keep manifests in a `k8s/` folder
+* Enable health checks and resource limits
+
+#### 🛠️ Tasks:
+
+* Automate `kubectl apply -f` using GitHub Actions
+* Use Helm to parameterize the deployment
+* Set up `kubectl` context to your cloud cluster (EKS/GKE/AKS)
+
+---
+
+### 🔹 **Day 85: Testing, Monitoring & Rollbacks**
+
