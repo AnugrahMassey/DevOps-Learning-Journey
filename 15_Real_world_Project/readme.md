@@ -110,3 +110,29 @@ jobs:
 
 ### 🔹 **Day 85: Testing, Monitoring & Rollbacks**
 
+#### 🔍 Key Areas:
+
+* **Testing**: Validate deployed pods, services
+* **Monitoring**: Use Prometheus + Grafana (or CloudWatch)
+* **Rollbacks**: Use `kubectl rollout undo` or Helm rollback
+
+#### 🛠️ Tasks:
+
+* Validate that your pipeline is fully automated
+* Make a small code change → push → confirm automatic deployment
+* Test rollback by deploying a bad change and rolling back
+
+---
+
+## 🧠 **Weekly Summary (Week 16)**
+
+| Day | Focus           | Key Takeaway                                         |
+| --- | --------------- | ---------------------------------------------------- |
+| 81  | CI/CD Overview  | Understand how real-world CI/CD works on the cloud   |
+| 82  | App Preparation | Containerize and prepare Kubernetes manifests        |
+| 83  | CI Automation   | Automate image builds and tests                      |
+| 84  | CD Automation   | Automate K8s deployments with GitHub Actions or Helm |
+| 85  | Validation      | Monitor, test, and add rollback mechanisms           |
+
+---
+
